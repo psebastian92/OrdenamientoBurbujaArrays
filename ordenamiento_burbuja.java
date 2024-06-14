@@ -13,40 +13,37 @@ public class ordenamiento_burbuja {
 			System.out.print(num + " ");
 		}
 
-		
 		// Aplicar el algoritmo de ordenamiento burbuja
-		
-		
-		for (int i = 0; i < (arreglo.length - 1) /* i < 4 (5-1) */; i++) {
-			 	// 
-			
-			
-			for (int j = 0; j < (arreglo.length - i - 1) ; j++) {
-									
-			/* arreglo.length - i - 1:
-			  	elimina pasadas innecesarias ya que el valor mas alto 
-			  	siempre quedara en la ultima posicion desde el 
-			  	inicio del ordenamiento. 
-			*/
-				// arreglo = { 2, 5, 8, 3, 1 };	
-				
-						
+
+		for (int i = 0; i < (arreglo.length - 1); i++) {
+			// Este for es para volver a comparar todos los elementos
+
+			for (int j = 0; j < (arreglo.length - i - 1); j++) {
+				// Este for SOLO me manda el numero mas grande a la posicion mas alta.
+
+				/*
+				 * arreglo.length - i - 1: elimina pasadas innecesarias ya que el valor mas alto
+				 * siempre quedara en la ultima posicion desde el inicio del ordenamiento.
+				 */
+
 				if (arreglo[j] > arreglo[j + 1]) {
-					
+
 					// Intercambiar los elementos
 					int temporal = arreglo[j];
 					// SI TENGO MAS DE UN ARRAY: String temporalNombre = nombre[j];
-					
-					/* temporal sirve para guardar por un momento
-						al valor mas alto. 
-					*/
+
+					/*
+					 * temporal sirve para guardar por un momento al valor mas alto.
+					 */
+
 					arreglo[j] = arreglo[j + 1];
-					// SI TENGO MAS DE UN ARRAY: nombre[j] =  nombre[j+1]
-					
-					// La primera posicion de las dos, toma el valor de la segunda (que es mas chico).
+					// SI TENGO MAS DE UN ARRAY: nombre[j] = nombre[j+1]
+
+					// La primera posicion de las dos, toma el valor de la segunda (que es mas
+					// chico).
 					arreglo[j + 1] = temporal;
 					// SI TENGO MAS DE UN ARRAY: nombre[j+1] = temporalNombre ;
-					
+
 					// La segunda posicion, toma el valor mas alto.
 				}
 			}
